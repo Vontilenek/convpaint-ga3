@@ -1,0 +1,17 @@
+# Trained models, images and results: never commit these
+*.pkl
+*.nd2
+*.tif
+*.tiff
+*.ome.tif
+
+# Environments and logs
+.pixi/
+python.log
+logs/
+
+# Python / OS
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
