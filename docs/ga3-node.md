@@ -4,6 +4,8 @@ Prerequisites: the environment is built and the model validated ([installation](
 
 Develop and test recipes on any PC with NIS-Elements and a saved image. You do not need the microscope until you run a live acquisition.
 
+> **Single-channel only.** The node below takes one channel in and expects a model trained on single-channel images. Multichannel and RGB (brightfield/H&E) images need a different input shape and a differently trained model; nodes for those are not yet developed or tested.
+
 ## 1. Add and configure the node
 
 1. Open NIS-Elements with an image loaded, then open the GA3 editor.
