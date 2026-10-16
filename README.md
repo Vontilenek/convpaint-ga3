@@ -9,13 +9,13 @@ Convpaint lets you train a segmentation model by painting a few annotations in n
 | | |
 |---|---|
 | Validated on | NIS-Elements **6.20**, Windows, Python **3.11**, napari-convpaint **1.1.0** |
-| Node | Single-channel (validated) |
+| Image type | **Single-channel only** (validated). Multichannel and RGB nodes are not yet developed or tested. |
 | NIS-Elements 7.x | **Not tested.** LIM's 7.01 release added native conda/mamba environment support to the Python node, so the lim-file patching described here is specific to 6.20. See LIM's [GA3-examples](https://github.com/Laboratory-Imaging/GA3-examples) repo, including `NIS_v7.10/50-Troubleshooting_pyenvs`. |
 
 ## What you need
 
 - A Windows PC with NIS-Elements 6.20 and **administrator rights** (one step patches files in the NIS install folder)
-- A trained convpaint model saved as a `.pkl` file
+- A trained convpaint model saved as a `.pkl` file, trained on **single-channel** images (for example DAPI alone), and fed the same channel at inference
 - The **same napari-convpaint version** that was used to train that model (convpaint models may not load across versions, and results can differ)
 - About an hour, most of it package downloads
 
