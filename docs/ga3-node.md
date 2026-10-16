@@ -20,14 +20,14 @@ Develop and test recipes on any PC with NIS-Elements and a saved image. You do n
 
 Replace the entire default contents of the editor with [`nodes/single_convpaint_node.py`](../nodes/single_convpaint_node.py).
 
-Edit the constants at the top of the file:
+Edit the two paths marked `>>>` in the file:
 
-| Constant | Meaning |
-|---|---|
-| `MODEL_PATH` | Full path to your `.pkl` model |
-| `LOG_PATH` | Where the node writes its progress log. The folder must already exist. |
-| `TARGET_CLASS` | The label number of the structure you want. Class numbers are the ones you assigned when annotating (commonly 1 = background, 2 = target, 3 = debris). |
-| `OUTPUT_NAME` | Label for the binary output layer |
+- the **model path**: the full path to your `.pkl`;
+- the **log path**: where the node writes its progress log. The folder must already exist.
+
+Paths in the code use doubled backslashes (`C:\\Convpaint\\...`).
+
+The node keeps label **2** as the target structure (`labels == 2`). Class numbers are the ones you assigned when annotating (commonly 1 = background, 2 = target, 3 = debris); change the `2` if yours differs.
 
 ## 3. Wire the input
 

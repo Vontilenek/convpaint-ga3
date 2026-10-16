@@ -16,7 +16,7 @@ Pixi builds and tracks that folder from a recipe:
 - `pixi.lock` is what was actually resolved, with exact versions.
 - `.pixi/` is the built result. It is machine-specific and should not be copied between PCs.
 
-In this guide, pixi provides Python 3.11 and `pip`, and `pip` installs napari-convpaint and the rest. Pixi does not record pip installs in `pixi.toml`, so the pinned versions in the install command are the record.
+In this guide, pixi provides Python 3.11 and `pip`, and `pip` installs napari-convpaint and the rest.
 
 ## Activation is only a PATH change
 

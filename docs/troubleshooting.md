@@ -7,8 +7,8 @@ Always check `python.log` first (see [ga3-node.md](ga3-node.md)); it is the only
 | `ModuleNotFoundError: No module named 'limnode'` | The lim files are missing from the environment | Copy all three lim files into `.pixi\envs\default\Lib\site-packages` ([lim-file-patch, step 3](lim-file-patch.md)) |
 | `CalledProcessError: Exited code 1` immediately on run | The child process died at startup, usually because the unpatched lim files reject your Python version or `Library\bin` is missing from PATH | Install the patched lim files and restart NIS-Elements |
 | `QtBindingsNotFoundError: No Qt bindings could be found` | convpaint imports its napari widget, which needs Qt | `pip install pyqt5` inside the environment |
-| `FileNotFoundError: ... python.log` | The log folder does not exist | Create the folder in `LOG_PATH` |
-| `FileNotFoundError: ... .pkl` | Wrong model filename or path | Copy the exact name into `MODEL_PATH` |
+| `FileNotFoundError: ... python.log` | The log folder does not exist | Create the folder named in the log path in the node |
+| `FileNotFoundError: ... .pkl` | Wrong model filename or path | Copy the exact name into the model path in the node |
 | No log file and no error | The child process never started | Check the interpreter path points at `pythonw.exe` in `.pixi\envs\default`, and that NIS was restarted after patching |
 | `BrokenPipeError: The pipe is being closed` during preview | The preview was cancelled or superseded while the child was still running | Usually cosmetic if a full Run succeeds. If `python.log` shows repeated `Model loaded` lines, the child is restarting often and may be running out of memory. |
 | Process killed with no error | Out of memory during feature extraction on a large image | Retrain with a higher `image_downsample`, or crop the input |

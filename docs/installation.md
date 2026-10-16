@@ -22,7 +22,7 @@ Avoid spaces in the folder name; they cause avoidable trouble when other softwar
 Open PowerShell and run the Windows installer from the [pixi documentation](https://pixi.sh):
 
 ```powershell
-powershell -ExecutionPolicy ByPass -c "irm -useb https://pixi.sh/install.ps1 | iex"
+powershell -ExecutionPolicy Bypass -c "irm -useb https://pixi.sh/install.ps1 | iex"
 ```
 
 Restart the terminal, then check:
@@ -55,10 +55,6 @@ pip install napari-convpaint==1.1.0 matplotlib pyqt5 nd2 tifffile
 | `tifffile` | Writes the test output in the standalone script. |
 
 napari itself is **not** needed on a deployment machine.
-
-**A note on reproducibility.** These packages are installed with `pip` inside the pixi environment. Pixi does not track them in `pixi.toml`, which records only Python and pip. The pinned versions in the command above are therefore your record of what was installed; write down the output of `pip list` if you need to reproduce the setup exactly.
-
-**GPU.** On Windows the default `pip` PyTorch wheel is CPU-only, which is enough for this workflow. If you want CUDA, install a CUDA build of `torch` and `torchvision` from [pytorch.org](https://pytorch.org) into this environment. That is not covered or validated here.
 
 ## 5. Confirm the interpreter
 
